@@ -10,6 +10,7 @@ app.listen(3000,function(){
     console.log("server 3000 is active");
 })
 
+
 app.get("/",function(req,res){
     fetch(url)
     .then(function(response){
@@ -21,15 +22,19 @@ app.get("/",function(req,res){
         
         response.json().then(function(data) {
             // console.log(data)
-            
-            console.log(data.length)
+            console.log(" ");
+            console.log("Characters:");
+
+            // to display characters
             var length=data.length;
             for(var i=0;i<length;i++){
                 display=data[i].name
-                console.log(display)
+                console.log(display);
               
             }
             console.log("  "); 
+
+            // to display better call saul characters
             console.log("BETTER CALL SAUL:");
             for(var i=0;i<length;i++){
                 if(data[i].better_call_saul_appearance.length!=0)
@@ -42,7 +47,6 @@ app.get("/",function(req,res){
                     console.log("status: "+status);
                     console.log("portrayed: "+portrayed);
                     console.log(" ");
-
                 }         
             } 
             // for(var i=0;i<length;i++){
@@ -55,12 +59,8 @@ app.get("/",function(req,res){
         .catch(function(err){
             console.log("oops");
         })
-   
-        
-        res.send("Check console");
 
-
-
+        res.send("OUTPUT ON TERMINAL");
 
 })
 })
